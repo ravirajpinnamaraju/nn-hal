@@ -1655,7 +1655,7 @@ bool PreparedModel::isOperationSupported(const Operation& operation, const Model
                 return false;
             }
         } break;
-        case case OperationType::MEAN:
+        case OperationType::MEAN:
             break;
         default:
             VLOG(L1, "unsupport opration %d", operation.type);
