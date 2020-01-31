@@ -12,8 +12,14 @@ LOCAL_SRC_FILES := \
   IRLayer.cpp
 
 LOCAL_C_INCLUDES += \
+	$(LOCAL_PATH) \
 	$(LOCAL_PATH)/../../../dldt/inference-engine/include \
+	$(LOCAL_PATH)/../../../dldt/inference-engine/include/builders \
+	$(LOCAL_PATH)/../../../dldt/inference-engine/include/cpp \
+	$(LOCAL_PATH)/../../../dldt/inference-engine/include/details \
+	$(LOCAL_PATH)/../../../dldt/inference-engine/include/gna \
 	$(LOCAL_PATH)/../../../dldt/inference-engine/src/inference_engine \
+	$(LOCAL_PATH)/../../../dldt/inference-engine/src/inference_engine/cpp_interfaces \
 	$(LOCAL_PATH)/../../../dldt/inference-engine/thirdparty/pugixml/src
 
 LOCAL_CFLAGS += \
@@ -33,8 +39,9 @@ LOCAL_CFLAGS += \
 
 LOCAL_CFLAGS += \
 	-D__ANDROID__ \
-	-DIMPLEMENT_INFERENCE_ENGINE_API
-#	-DNNLOG
+	-DIMPLEMENT_INFERENCE_ENGINE_API \
+	-DNNLOG \
+	-DENABLE_GNA
 
 LOCAL_SHARED_LIBRARIES := liblog
 
